@@ -1,20 +1,21 @@
 // components/Header.js
 import Image from "next/image";
 import { FaUser, FaHeart } from "react-icons/fa";
+import Logo from "../../public/logo-shaftscore.png";
 
 export default function Header() {
   return (
     <header className="flex items-center justify-between p-4 bg-gray-800 text-white">
       {/* Logo */}
       <div className="flex items-center">
-        <Image src="/logo.png" alt="Logo" width={40} height={40} />
+        <Image src={Logo} alt="Logo" width={260} height={140} />
       </div>
 
       {/* Search Field */}
       <div className="flex-grow mx-4">
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Buscar"
           className="w-full p-2 rounded-md bg-gray-700 text-white outline-none"
         />
       </div>

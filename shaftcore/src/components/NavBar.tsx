@@ -23,8 +23,8 @@ import {
 
 export default function NavBar() {
   return (
-    <nav className="bg-blue-700 p-4 flex justify-between items-center text-white">
-      <div className="flex space-x-4 overflow-x-auto">
+    <nav className="bg-gray-800 p-4 flex justify-between items-center text-white overflow-x-auto">
+      <div className="flex flex-grow space-x-12 justify-start">
         <button className="flex flex-col items-center space-y-1 hover:text-yellow-400">
           <FaFutbol size={24} />
           <span className="text-xs">Football</span>
@@ -82,7 +82,7 @@ export default function NavBar() {
           <span className="text-xs">More</span>
         </button>
       </div>
-      <button className="p-2 hover:text-yellow-400">
+      <button className="mb-2 p-2 hover:text-yellow-400">
         <FaCog size={24} />
       </button>
     </nav>

@@ -3,11 +3,10 @@ import NavBar from "@/components/NavBar";
 
 export default function Home() {
   return (
-    <div>
+    <div style={{ background: "#edf1f6" }}>
       <Header /> {/* Adiciona o Header */}
       <NavBar></NavBar>
-      <div className="p-4">
-        <p>Projeto Inicial</p>{" "}
+      <div className="p-4" style={{ background: "#edf1f6" }}>
         {/* Mantém o texto inicial ou personalize como desejar */}
       </div>
     </div>
