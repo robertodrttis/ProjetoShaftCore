@@ -55,11 +55,11 @@ export default function NavBar() {
         </button>
         <button className="flex flex-col items-center space-y-1 hover:text-yellow-400">
           <GiBrokenTablet size={24} />
-          <span className="text-xs">Table Tennis</span>
+          <span className="text-xs">Table</span>
         </button>
         <button className="flex flex-col items-center space-y-1 hover:text-yellow-400">
           <GiWaterPolo size={24} />
-          <span className="text-xs">Water Polo</span>
+          <span className="text-xs">Water</span>
         </button>
         <button className="flex flex-col items-center space-y-1 hover:text-yellow-400">
           <GiHockey size={24} />
@@ -82,7 +82,7 @@ export default function NavBar() {
           <span className="text-xs">More</span>
         </button>
       </div>
-      <button className="mb-2 p-2 hover:text-yellow-400">
+      <button className="ml-5 mb-2 p-2 hover:text-yellow-400">
         <FaCog size={24} />
       </button>
     </nav>
