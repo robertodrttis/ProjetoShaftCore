@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
+import TimeBr from "../../public/br.png";
+import Image from "next/image";
 
 const RankingsCard: React.FC = () => {
   const rankings = [
-    { name: 'FIFA Rankings', icon: '/icons/fifa.png' },
-    { name: 'UEFA Rankings', icon: '/icons/uefa.png' },
+    { name: "FIFA Rankings", icon: "/icons/fifa.png" },
+    { name: "UEFA Rankings", icon: "/icons/uefa.png" },
   ];
 
   return (
@@ -12,7 +14,7 @@ const RankingsCard: React.FC = () => {
       <ul className="space-y-3">
         {rankings.map((ranking) => (
           <li key={ranking.name} className="flex items-center">
-            <img src={ranking.icon} alt={`${ranking.name} Icon`} className="w-6 h-6 mr-3" />
+            <Image src={TimeBr} alt="Team 1" className="w-6 h-6 mr-3" />
             <span className="font-medium">{ranking.name}</span>
           </li>
         ))}
