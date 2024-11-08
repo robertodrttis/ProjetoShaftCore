@@ -169,12 +169,12 @@ const Footer: React.FC = () => {
             </div>
             <div className="flex space-x-4">
               <img
-                src="/icons/google-play.png"
+                src="/GoogleplayFooter.png"
                 alt="Google Play"
                 className="w-32 transition-transform transform hover:scale-105"
               />
               <img
-                src="/icons/app-store.png"
+                src="/appleFooterApp.png.png"
                 alt="App Store"
                 className="w-32 transition-transform transform hover:scale-105"
               />
@@ -196,10 +196,10 @@ const Footer: React.FC = () => {
             </div>
             <div className="flex space-x-4">
               {[
-                "/icons/facebook.png",
-                "/icons/instagram.png",
-                "/icons/twitter.png",
-                "/icons/tiktok.png",
+                "/facebookFooter.png",
+                "/instagramFooter.png",
+                "/twitter.png",
+                "/tik-tok.png",
               ].map((icon, index) => (
                 <img
                   key={index}

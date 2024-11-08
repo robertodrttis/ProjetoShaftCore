@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import LiveMatches from "@/components/LiveMatches";
 import NavBar from "@/components/NavBar";
@@ -7,6 +8,7 @@ import TopLeaguesCard from "@/components/TopLeaguesCard";
 import RankingsCard from "@/components/RankingsCard";
 import Footer from "@/components/Footer";
 import TopPlayers from "@/components/TopPlayers";
+import OddsCard from "../components/OddsCard";
 
 export default function Home() {
   return (
@@ -38,6 +40,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <OddsCard />
+      </div>
+ 
       {/* Footer */}
       <div className="">
         <Footer />
