@@ -1,34 +1,98 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+// Função auxiliar para obter os dias do mês
+const getDaysInMonth = (month: number, year: number) => {
+  return new Date(year, month + 1, 0).getDate();
+};
+
+// Função para obter o dia da semana do primeiro dia do mês
+const getStartDayOfMonth = (month: number, year: number) => {
+  return new Date(year, month, 1).getDay();
+};
 
 const Calendary: React.FC = () => {
+  const today = new Date();
+  
+  // Estados para o mês e ano atuais
+  const [month, setMonth] = useState(today.getMonth());
+  const [year, setYear] = useState(today.getFullYear());
+  const [daysInMonth, setDaysInMonth] = useState(getDaysInMonth(month, year));
+  const [startDay, setStartDay] = useState(getStartDayOfMonth(month, year));
+
+  // Atualiza os dias e o início do mês quando o mês ou ano mudam
+  useEffect(() => {
+    setDaysInMonth(getDaysInMonth(month, year));
+    setStartDay(getStartDayOfMonth(month, year));
+  }, [month, year]);
+
+  // Navegação entre meses
+  const handlePreviousMonth = () => {
+    if (month === 0) {
+      setMonth(11);
+      setYear(year - 1);
+    } else {
+      setMonth(month - 1);
+    }
+  };
+
+  const handleNextMonth = () => {
+    if (month === 11) {
+      setMonth(0);
+      setYear(year + 1);
+    } else {
+      setMonth(month + 1);
+    }
+  };
+
+  // Formatação do nome do mês
+  const monthNames = [
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+  ];
+
   return (
     <div className="p-4 bg-gray-100 rounded-lg shadow-lg">
       <h2 className="text-md font-bold mb-4">
         Resultados ao vivo de futebol e programação de hoje
       </h2>
       <div className="flex items-center justify-between mb-4">
-        <button className="text-gray-600 hover:text-gray-800">{"<"}</button>
-        <span className="font-semibold">Outubro 2024</span>
-        <button className="text-gray-600 hover:text-gray-800">{">"}</button>
+        <button onClick={handlePreviousMonth} className="text-gray-600 hover:text-gray-800">{"<"}</button>
+        <span className="font-semibold">
+          {monthNames[month]} {year}
+        </span>
+        <button onClick={handleNextMonth} className="text-gray-600 hover:text-gray-800">{">"}</button>
       </div>
       <div className="grid grid-cols-7 gap-2 text-center">
-        {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+        {["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"].map((day) => (
           <div key={day} className="text-sm font-semibold text-gray-600">
             {day}
           </div>
         ))}
-        {[...Array(31)].map((_, index) => (
+        {/* Preenchendo com dias vazios até o início correto do mês */}
+        {[...Array(startDay)].map((_, index) => (
+          <div key={`empty-${index}`} className="p-2"></div>
+        ))}
+        {/* Renderizando os dias do mês */}
+        {[...Array(daysInMonth)].map((_, index) => (
           <div
             key={index}
             className={`p-2 rounded-full hover:bg-blue-100 cursor-pointer ${
-              index + 1 === 29 ? "bg-blue-500 text-white" : "text-gray-800"
+              index + 1 === today.getDate() && month === today.getMonth() && year === today.getFullYear()
+                ? "bg-blue-500 text-white"
+                : "text-gray-800"
             }`}
           >
             {index + 1}
           </div>
         ))}
       </div>
-      <button className="mt-4 p-2 w-full bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+      <button 
+        onClick={() => {
+          setMonth(today.getMonth());
+          setYear(today.getFullYear());
+        }}
+        className="mt-4 p-2 w-full bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+      >
         Hoje
       </button>
     </div>

@@ -7,6 +7,7 @@ import TopLeaguesCard from "@/components/TopLeaguesCard";
 import RankingsCard from "@/components/RankingsCard";
 import Footer from "@/components/Footer";
 import TopPlayers from "@/components/TopPlayers";
+import OddsCard from "../components/OddsCard";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
           <Scoreboard />
           <div className="mt-5">
             <TopPlayers />
+            <OddsCard />
           </div>
         </div>
       </div>

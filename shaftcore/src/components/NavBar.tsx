@@ -6,7 +6,6 @@ import {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   FaUser,
   FaEllipsisH,
-  FaCog,
 } from "react-icons/fa";
 import {
   GiGloves,
@@ -84,9 +83,6 @@ export default function NavBar() {
           <span className="text-xs">Mais</span>
         </button>
       </div>
-      <button className="ml-5 mb-2 p-2 hover:text-yellow-400">
-        <FaCog size={24} />
-      </button>
     </nav>
   );
 }
