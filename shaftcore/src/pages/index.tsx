@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import LiveMatches from "@/components/LiveMatches";
 import NavBar from "@/components/NavBar";
@@ -37,13 +36,10 @@ export default function Home() {
           <Scoreboard />
           <div className="mt-5">
             <TopPlayers />
+            <OddsCard />
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <OddsCard />
-      </div>
- 
       {/* Footer */}
       <div className="">
         <Footer />
