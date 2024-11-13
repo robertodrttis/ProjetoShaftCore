@@ -1,3 +1,5 @@
+// pages/index.tsx
+
 import Header from "@/components/Header";
 import LiveMatches from "@/components/LiveMatches";
 import NavBar from "@/components/NavBar";
@@ -14,36 +16,29 @@ export default function Home() {
     <div style={{ background: "#edf1f6" }}>
       <Header /> {/* Adiciona o Header */}
       <NavBar />
-      <div className="mt-2 flex justify-center items-start space-x-12 mb-5">
+      <div className="mt-2 flex flex-wrap justify-center items-start space-y-6 lg:space-y-0 lg:space-x-12 mb-5">
         {/* Componente à esquerda */}
-        <div className="w-full lg:w-1/4 p-4 lg:p-0">
+        <div className="w-full lg:w-1/4 p-4 lg:p-0 space-y-6">
           <Calendary />
           <TopLeaguesCard />
-          <div className="mb-5">
-            <RankingsCard />
-          </div>
+          <RankingsCard />
         </div>
 
         {/* Componente de Partidas ao Vivo no centro */}
-        <div className="flex-1 max-w-lg space-y-5">
-          <div className="mb-5">
-            <LiveMatches />
-          </div>
+        <div className="w-full lg:flex-1 max-w-lg space-y-5">
+          <LiveMatches />
         </div>
 
-        {/* Componente de Placar e TopPlayers à direita */}
-        <div className="max-w-lg mr-16 mb-5" style={{ width: "400px" }}>
+        {/* Componente de Placar, TopPlayers e Odds à direita */}
+        <div className="w-full lg:w-1/4 p-4 lg:p-0 space-y-6">
           <Scoreboard />
-          <div className="mt-5">
-            <TopPlayers />
-            <OddsCard />
-          </div>
+          <TopPlayers />
+          <OddsCard />
         </div>
       </div>
+      
       {/* Footer */}
-      <div className="">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
