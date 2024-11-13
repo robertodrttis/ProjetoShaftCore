@@ -12,7 +12,7 @@ const getStartDayOfMonth = (month: number, year: number) => {
 
 const Calendary: React.FC = () => {
   const today = new Date();
-  
+
   // Estados para o mês e ano atuais
   const [month, setMonth] = useState(today.getMonth());
   const [year, setYear] = useState(today.getFullYear());
@@ -51,20 +51,30 @@ const Calendary: React.FC = () => {
   ];
 
   return (
-    <div className="p-4 bg-gray-100 rounded-lg shadow-lg">
-      <h2 className="text-md font-bold mb-4">
+    <div className="p-4 bg-white rounded-lg shadow-lg w-full">
+      <h2 className="text-md md:text-lg font-bold mb-4 text-center">
         Resultados ao vivo de futebol e programação de hoje
       </h2>
       <div className="flex items-center justify-between mb-4">
-        <button onClick={handlePreviousMonth} className="text-gray-600 hover:text-gray-800">{"<"}</button>
-        <span className="font-semibold">
+        <button
+          onClick={handlePreviousMonth}
+          className="text-gray-600 hover:text-gray-800 text-xl md:text-2xl"
+        >
+          {"<"}
+        </button>
+        <span className="font-semibold text-sm md:text-lg">
           {monthNames[month]} {year}
         </span>
-        <button onClick={handleNextMonth} className="text-gray-600 hover:text-gray-800">{">"}</button>
+        <button
+          onClick={handleNextMonth}
+          className="text-gray-600 hover:text-gray-800 text-xl md:text-2xl"
+        >
+          {">"}
+        </button>
       </div>
-      <div className="grid grid-cols-7 gap-2 text-center">
-        {["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"].map((day) => (
-          <div key={day} className="text-sm font-semibold text-gray-600">
+      <div className="grid grid-cols-7 gap-2 md:gap-4 text-center text-xs md:text-sm lg:text-base">
+        {["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"].map((day) => (
+          <div key={day} className="font-semibold text-gray-600">
             {day}
           </div>
         ))}
@@ -76,7 +86,7 @@ const Calendary: React.FC = () => {
         {[...Array(daysInMonth)].map((_, index) => (
           <div
             key={index}
-            className={`p-2 rounded-full hover:bg-blue-100 cursor-pointer ${
+            className={`p-2 md:p-3 rounded-full hover:bg-blue-100 cursor-pointer transition-colors ${
               index + 1 === today.getDate() && month === today.getMonth() && year === today.getFullYear()
                 ? "bg-blue-500 text-white"
                 : "text-gray-800"
@@ -86,12 +96,12 @@ const Calendary: React.FC = () => {
           </div>
         ))}
       </div>
-      <button 
+      <button
         onClick={() => {
           setMonth(today.getMonth());
           setYear(today.getFullYear());
         }}
-        className="mt-4 p-2 w-full bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+        className="mt-4 p-2 md:p-3 w-full bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
       >
         Hoje
       </button>

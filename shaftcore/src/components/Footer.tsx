@@ -125,22 +125,23 @@ const Footer = () => {
                 height={40}
               />
             </div>
-            <div className="flex space-x-4">
+          {/* <div className="flex space-x-4">
               <Image
-                src="/GoogleplayFooter.png"
+                src="/GooglePlay.png"
                 alt="Google Play"
                 width={100}
                 height={40}
                 className="transition-transform transform hover:scale-105"
               />
               <Image
-                src="/ApplestoreFooter.png"
+                src="/AppleStore.png"
                 alt="App Store"
                 width={100}
                 height={40}
                 className="transition-transform transform hover:scale-105"
               />
-            </div>
+            </div> 
+            */}
           </div>
 
           <div className="flex flex-col items-center lg:items-end">
@@ -151,10 +152,10 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-            <div className="flex space-x-4">
-              {/* {[
-                "/facebook.png",
-                "/instagram.png",
+             <div className="flex space-x-4">
+              {[
+                "/facebookFooter.png",
+                "/instagramFooter.png",
                 "/twitter.png",
                 "/tiktokFooter.png",
               ].map((icon, index) => (
@@ -166,9 +167,9 @@ const Footer = () => {
                   height={24}
                   className="transition-transform transform hover:scale-110"
                 />
-              ))} */}
-            </div>
-          </div>
+              ))} 
+            </div> 
+           </div>
         </div>
 
         {/* Legal Links */}
