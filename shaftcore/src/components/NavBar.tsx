@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   FaFutbol,
   FaBasketballBall,
@@ -30,16 +30,22 @@ export default function NavBar() {
   return (
     <nav className="bg-gray-800 p-4 text-white">
       <div className="flex items-center justify-center max-w-7xl mx-auto">
-        
         {/* Botão do menu hamburguer para telas menores */}
         <div className="lg:hidden absolute left-4">
-          <button onClick={toggleMenu} className="text-white focus:outline-none">
+          <button
+            onClick={toggleMenu}
+            className="text-white focus:outline-none"
+          >
             {isOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
           </button>
         </div>
 
         {/* Menus */}
-        <div className={`lg:flex lg:items-center lg:space-x-8 ${isOpen ? 'block' : 'hidden'} w-full lg:w-auto mt-4 lg:mt-0`}>
+        <div
+          className={`lg:flex lg:items-center lg:space-x-8 ${
+            isOpen ? "block" : "hidden"
+          } w-full lg:w-auto mt-4 lg:mt-0`}
+        >
           <div className="flex flex-wrap lg:flex-nowrap space-x-4 lg:space-x-8 justify-center lg:justify-center">
             <button className="flex flex-col items-center space-y-1 hover:text-yellow-400">
               <FaFutbol size={24} />

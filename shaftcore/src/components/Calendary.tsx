@@ -46,8 +46,18 @@ const Calendary: React.FC = () => {
 
   // Formatação do nome do mês
   const monthNames = [
-    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro",
   ];
 
   return (
@@ -86,8 +96,10 @@ const Calendary: React.FC = () => {
         {[...Array(daysInMonth)].map((_, index) => (
           <div
             key={index}
-            className={`p-2 md:p-3 rounded-full hover:bg-blue-100 cursor-pointer transition-colors ${
-              index + 1 === today.getDate() && month === today.getMonth() && year === today.getFullYear()
+            className={`p-2 md:p-2 rounded-full hover:bg-blue-100 cursor-pointer transition-colors ${
+              index + 1 === today.getDate() &&
+              month === today.getMonth() &&
+              year === today.getFullYear()
                 ? "bg-blue-500 text-white"
                 : "text-gray-800"
             }`}

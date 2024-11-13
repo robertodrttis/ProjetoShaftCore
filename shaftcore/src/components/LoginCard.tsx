@@ -64,8 +64,17 @@ const LoginCard: React.FC<LoginCardProps> = ({ onClose }) => {
         </div>
 
         {/* Right Side - Background Video (aparece apenas em telas médias e maiores) */}
-        <div className="hidden md:block w-1/2 relative">
-          <video className="w-full h-full object-cover" autoPlay loop muted>
+        <div
+          className="hidden md:block w-1/2 relative"
+          style={{ zIndex: "1000 !important;" }}
+        >
+          <video
+            style={{ zIndex: "1000 !important;" }}
+            className="w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+          >
             <source src="/videoLoginCard.mp4" type="video/mp4" />
             Seu navegador não suporta a tag de vídeo.
           </video>
