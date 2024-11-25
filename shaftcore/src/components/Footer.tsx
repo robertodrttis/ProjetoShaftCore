@@ -1,193 +1,136 @@
-import Image from "next/image";
-import React from "react";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { TbBrandX } from "react-icons/tb";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 ">
-          {/* About Section */}
+    <footer className="bg-gray-100 text-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Grid Principal */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {/* Seções do Footer */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Sobre</h3>
-            <p className="text-sm leading-relaxed">
-              Resultados ao vivo de futebol no ShaftScore livecore tem cobertura
-              ao vivo de mais de 500 ligas, copas e torneios de futebol em todo
-              o mundo com resultados atualizados ao vivo, estatísticas, tabelas
-              de classificação, destaques em vídeo, jogos e transmissão ao vivo.
-              Os jogos ao vivo de todas as ligas de futebol têm atualizações
-              rápidas e precisas de minutos, pontuações, resultados de futebol
-              no intervalo e no final do jogo, artilheiros e assistentes,
-              cartões, substituições, estatísticas de jogos e transmissão ao
-              vivo. Os destaques em vídeo estão disponíveis para as ligas de
-              futebol mais populares: Espanha La Liga BBVA e Copa del Rey,
-              Itália Serie e Coppa Italia, Bundesliga alemã e DFB pokal, França
-              Ligue 1 e UEFA Champions League, Liga Europa e torneios
-              internacionais como Campeonato Mundial, Europeu Campeonato.{" "}
-            </p>
+            <h3 className="font-bold text-lg mb-4">Futebol</h3>
+            <ul className="space-y-2">
+              <li>Brasileirão Betano 2024</li>
+              <li>Série B</li>
+              <li>Série C</li>
+              <li>Copa Libertadores</li>
+              <li>Copa Sul-Americana 2024</li>
+              <li>Torneio Betano</li>
+              <li>Flashscore Podcast</li>
+            </ul>
           </div>
-
-          {/* Sections for Sports and Scores */}
-          <div className="lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-3 text-sm ">
-            {/* Football Section */}
-            <div>
-              <h3 className="font-bold text-lg mb-4">Futebol</h3>
-              <ul className="space-y-2">
-                <li>UEFA Champions League</li>
-                <li>Premier League</li>
-                <li>LaLiga</li>
-                <li>Bundesliga</li>
-                <li>Serie A</li>
-                <li>FIFA Rankings</li>
-                <li>UEFA Rankings</li>
-              </ul>
-            </div>
-
-            {/* Basketball Section */}
-            <div>
-              <h3 className="font-bold text-lg mb-4">Basquete</h3>
-              <ul className="space-y-2">
-                <li>NBA</li>
-                <li>Euroleague</li>
-                <li>Liga ACB</li>
-                <li>Basquete Super League</li>
-                <li>Serie A</li>
-                <li>ABA League</li>
-              </ul>
-            </div>
-
-            {/* Tennis Section */}
-            <div>
-              <h3 className="font-bold text-lg mb-4">Tênis</h3>
-              <ul className="space-y-2">
-                <li>Wimbledon</li>
-                <li>Australian Open</li>
-                <li>Roland Garros</li>
-                <li>US Open</li>
-                <li>WTA</li>
-                <li>ATP Rankings</li>
-                <li>WTA Rankings</li>
-              </ul>
-            </div>
-
-            {/* Trending Section */}
-            <div>
-              <h3 className="font-bold text-lg mb-4">Tendências</h3>
-              <ul className="space-y-2">
-                <li>NHL</li>
-                <li>NFL</li>
-                <li>MLB</li>
-                <li>Formula 1</li>
-                <li>UFC</li>
-                <li>Cage Warriors</li>
-                <li>EHF Championship League</li>
-              </ul>
-            </div>
-
-            {/* Football Scores Section */}
-            <div>
-              <h3 className="font-bold text-lg mb-4">Resultados de Futebol</h3>
-              <ul className="space-y-2">
-                <li>Real Madrid - Milan</li>
-                <li>Real Madrid - Osasuna</li>
-                <li>Crvena zvezda - Barcelona</li>
-                <li>Sporting - Man City</li>
-                <li>Brighton - Man City</li>
-                <li>Liverpool - Leverkusen</li>
-                <li>Inter - Arsenal</li>
-              </ul>
-            </div>
-
-            {/* Basketball Scores Section */}
-            <div>
-              <h3 className="font-bold text-lg mb-4">Resultados de Basquete</h3>
-              <ul className="space-y-2">
-                <li>Celtics - Warriors</li>
-                <li>Pistons - Lakers</li>
-                <li>Lakers - 76ers</li>
-                <li>Grizzlies - Lakers</li>
-                <li>Wizards - Warriors</li>
-                <li>Cavaliers - Warriors</li>
-                <li>Hawks - Celtics</li>
-              </ul>
-            </div>
+          <div>
+            <h3 className="font-bold text-lg mb-4">Páginas em Alta</h3>
+            <ul className="space-y-2">
+              <li>NBB 2024</li>
+              <li>Liga Futsal 2024</li>
+              <li>NBA Resultados</li>
+              <li>Fórmula 1</li>
+              <li>Notícias de Tênis</li>
+              <li>NFL 2024</li>
+              <li>NHL 2024</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-lg mb-4">Jogos ao Vivo</h3>
+            <ul className="space-y-2">
+              <li>Sport x Santos</li>
+              <li>Goiás x Novorizontino</li>
+              <li>América-MG x Brusque</li>
+              <li>Paysandu x Vila Nova</li>
+              <li>Guarani x Ceará</li>
+              <li>Celta de Vigo x Barcelona</li>
+              <li>Leganés x Real Madrid</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-lg mb-4">Futebol Resultados</h3>
+            <ul className="space-y-2">
+              <li>Atlético-GO x Palmeiras</li>
+              <li>Corinthians x Vasco</li>
+              <li>Fortaleza x Flamengo</li>
+              <li>Palmeiras x Botafogo</li>
+              <li>Criciúma x Corinthians</li>
+            </ul>
+            <h3 className="font-bold text-lg mt-6 mb-4">NBB Resultados</h3>
+            <ul className="space-y-2">
+              <li>Bauru x Fortaleza B.C.</li>
+              <li>São José x Caxias do Sul</li>
+              <li>Mogi x União Corinthians</li>
+              <li>Pato x Botafogo</li>
+            </ul>
           </div>
         </div>
 
-        {/* Footer Bottom Section */}
-        <div className="mt-12 border-t border-gray-700 pt-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="flex flex-col items-center lg:items-start">
-            <div className="flex items-center mb-4">
-              <Image
-                src="/logo-shaftscore.png"
-                alt="ShaftScoreLogo"
-                width={160}
-                height={40}
-              />
-            </div>
-          {/* <div className="flex space-x-4">
-              <Image
-                src="/GooglePlay.png"
-                alt="Google Play"
-                width={100}
-                height={40}
-                className="transition-transform transform hover:scale-105"
-              />
-              <Image
-                src="/AppleStore.png"
-                alt="App Store"
-                width={100}
-                height={40}
-                className="transition-transform transform hover:scale-105"
-              />
-            </div> 
-            */}
+        {/* Divisor */}
+        <div className="border-t border-gray-300 my-8"></div>
+
+        {/* Informações Inferiores */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Informações adicionais */}
+          <div>
+            <h3 className="font-bold mb-4">SHAFTSCORE.COM.BR</h3>
+            <ul className="space-y-2 text-sm">
+              <li>Condições de Utilização</li>
+              <li>Política de Privacidade</li>
+              <li>Jornalismo e Proteção de Dados</li>
+              <li>Publicidade</li>
+              <li>Contato</li>
+              <li>Mobile</li>
+            </ul>
           </div>
 
-          <div className="flex flex-col items-center lg:items-end">
-            <div className="flex space-x-4 mb-4">
-              {["Anúncio", "Contato", "Notícias ShaftCore"].map((link) => (
-                <a key={link} href="#" className="hover:underline">
-                  {link}
-                </a>
-              ))}
-            </div>
-             <div className="flex space-x-4">
-              {[
-                "/facebookFooter.png",
-                "/instagramFooter.png",
-                "/twitter.png",
-                "/tiktokFooter.png",
-              ].map((icon, index) => (
-                <Image
-                  key={index}
-                  src={icon}
-                  alt="Social Icon"
-                  width={24}
-                  height={24}
-                  className="transition-transform transform hover:scale-110"
-                />
-              ))} 
-            </div> 
-           </div>
-        </div>
-
-        {/* Legal Links */}
-        <div className="mt-12 border-t border-gray-700 pt-6 flex flex-col lg:flex-row justify-between items-center text-xs">
-          <div className="mb-4 lg:mb-0 text-center lg:text-left">
-            <span>&copy; 2024 ShaftScore - Todos os direitos reservados.</span>
-          </div>
-          <div className="flex space-x-4">
-            {[
-              "Política de Privacidade",
-              "Política de Cookies",
-              "Termos e Condições",
-            ].map((link) => (
-              <a key={link} href="#" className="hover:underline">
-                {link}
+          {/* Redes Sociais */}
+          <div className="flex flex-col items-center">
+            <h3 className="font-bold mb-4">REDES SOCIAIS</h3>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-500 hover:text-gray-700">
+                <FaFacebook size={24} />
               </a>
-            ))}
+              <a href="#" className="text-gray-500 hover:text-gray-700">
+                <TbBrandX size={24} />
+              </a>
+              <a href="#" className="text-gray-500 hover:text-gray-700">
+                <FaInstagram size={24} />
+              </a>
+            </div>
           </div>
+
+          {/* Aplicativos Móveis */}
+          <div className="flex flex-col items-center">
+            <h3 className="font-bold mb-4">APLICATIVOS MÓVEIS</h3>
+            <p className="text-center text-sm mb-4">
+              Nosso aplicativo mobile está otimizado para o seu smartphone. Faça
+              o download gratuito!
+            </p>
+            <div className="flex space-x-4">
+              <a href="#">
+                <img
+                  src="appGoogle.png"
+                  alt="Google Play"
+                  className="h-10"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="AppStore.png"
+                  alt="App Store"
+                  className="h-10"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Informações Legais e Copyright */}
+        <div className="border-t border-gray-300 my-8"></div>
+        <div className="text-center text-sm text-gray-600">
+          <p className="mb-2">Aposte com responsabilidade 18+</p>
+          <p>Copyright © 2024 Shaftscore.com.br</p>
+          <a href="#" className="text-blue-500 hover:underline">
+            Configurar privacidade
+          </a>
         </div>
       </div>
     </footer>
