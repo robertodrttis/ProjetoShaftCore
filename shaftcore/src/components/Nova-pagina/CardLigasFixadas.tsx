@@ -1,6 +1,30 @@
 import React from "react";
 
+interface Liga {
+  id: number;
+  nome: string;
+  link: string;
+  bandeira: string;
+}
+
 const CardLigasFixadas: React.FC = () => {
+  // Lista de ligas fixadas com links e bandeiras
+  const ligas: Liga[] = [
+    { id: 1, nome: "Brasileirão Betano", link: "/brasileirao", bandeira: "br.png" },
+    { id: 2, nome: "Série B", link: "/serie-b", bandeira: "br.png" },
+    { id: 3, nome: "Copa Betano do Brasil", link: "/copa-betano", bandeira: "br.png" },
+    { id: 4, nome: "LaLiga", link: "/laliga", bandeira: "br.png" },
+    { id: 5, nome: "Ligue 1", link: "/ligue-1", bandeira: "br.png" },
+    { id: 6, nome: "Premier League", link: "/premier-league", bandeira: "br.png" },
+    { id: 7, nome: "Serie A", link: "/serie-a", bandeira: "br.png" },
+    { id: 8, nome: "Copa América", link: "/copa-america", bandeira: "br.png" },
+    { id: 9, nome: "Copa Libertadores", link: "/copa-libertadores", bandeira: "br.png" },
+    { id: 10, nome: "Copa Sul-Americana", link: "/copa-sulamericana", bandeira: "br.png" },
+    { id: 11, nome: "Liga dos Campeões", link: "/liga-dos-campeoes", bandeira: "br.png" },
+    { id: 12, nome: "Liga Europa", link: "/liga-europa", bandeira: "br.png" },
+    { id: 13, nome: "Copa do Mundo", link: "/copa-do-mundo", bandeira: "br.png" },
+  ];
+
   return (
     <div className="bg-gray-100 p-3 rounded-lg shadow-md w-72">
       {/* Título do Card */}
@@ -13,58 +37,17 @@ const CardLigasFixadas: React.FC = () => {
 
       {/* Lista de Ligas Fixadas */}
       <ul className="space-y-1 text-sm">
-        <li className="flex items-center text-gray-700">
-          <img src="br.png" alt="Brasil" className="h-5 w-5 mr-2" />
-          Brasileirão Betano
-        </li>
-        <li className="flex items-center text-gray-700">
-          <img src="br.png" alt="Brasil" className="h-5 w-5 mr-2" />
-          Série B
-        </li>
-        <li className="flex items-center text-gray-700">
-          <img src="br.png" alt="Brasil" className="h-5 w-5 mr-2" />
-          Copa Betano do Brasil
-        </li>
-        <li className="flex items-center text-gray-700">
-          <img src="br.png" alt="Espanha" className="h-5 w-5 mr-2" />
-          LaLiga
-        </li>
-        <li className="flex items-center text-gray-700">
-          <img src="br.png" alt="França" className="h-5 w-5 mr-2" />
-          Ligue 1
-        </li>
-        <li className="flex items-center text-gray-700">
-          <img src="br.png" alt="Inglaterra" className="h-5 w-5 mr-2" />
-          Premier League
-        </li>
-        <li className="flex items-center text-gray-700">
-          <img src="br.png" alt="Itália" className="h-5 w-5 mr-2" />
-          Serie A
-        </li>
-        <li className="flex items-center text-gray-700">
-          <img src="br.png" alt="América" className="h-5 w-5 mr-2" />
-          Copa América
-        </li>
-        <li className="flex items-center text-gray-700">
-          <img src="br.png" alt="América" className="h-5 w-5 mr-2" />
-          Copa Libertadores
-        </li>
-        <li className="flex items-center text-gray-700">
-          <img src="br.png" alt="América" className="h-5 w-5 mr-2" />
-          Copa Sul-Americana
-        </li>
-        <li className="flex items-center text-gray-700">
-          <img src="br.png" alt="Europa" className="h-5 w-5 mr-2" />
-          Liga dos Campeões
-        </li>
-        <li className="flex items-center text-gray-700">
-          <img src="br.png" alt="Europa" className="h-5 w-5 mr-2" />
-          Liga Europa
-        </li>
-        <li className="flex items-center text-gray-700">
-          <img src="br.png" alt="Europa" className="h-5 w-5 mr-2" />
-          Copa do Mundo
-        </li>
+        {ligas.map((liga) => (
+          <li key={liga.id}>
+            <a
+              href={liga.link}
+              className="flex items-center text-gray-700 hover:bg-gray-200 hover:shadow-md p-1 rounded-md transition-all"
+            >
+              <img src={liga.bandeira} alt={liga.nome} className="h-5 w-5 mr-2" />
+              {liga.nome}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   );

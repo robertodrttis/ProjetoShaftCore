@@ -49,80 +49,84 @@ const CardClassificacao: React.FC = () => {
 
       {/* Conteúdo Dinâmico */}
       {activeTab === "LIVE STANDINGS" && (
-        <table className="w-full border-collapse text-sm md:text-base">
-          <thead>
-            <tr className="bg-gray-100 text-left text-gray-600 font-semibold">
-              <th className="p-2 md:p-4">#</th>
-              <th className="p-2 md:p-4">Equipe</th>
-              <th className="p-2 md:p-4">J</th>
-              <th className="p-2 md:p-4">V</th>
-              <th className="p-2 md:p-4">E</th>
-              <th className="p-2 md:p-4">D</th>
-              <th className="p-2 md:p-4">SG</th>
-              <th className="p-2 md:p-4">P</th>
-              <th className="p-2 md:p-4 text-center">Forma</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((team) => (
-              <tr
-                key={team.pos}
-                className="border-b hover:bg-gray-50 transition"
-              >
-                <td className="p-2 md:p-4">{team.pos}</td>
-                <td className="p-2 md:p-4">{team.equipe}</td>
-                <td className="p-2 md:p-4">{team.j}</td>
-                <td className="p-2 md:p-4">{team.v}</td>
-                <td className="p-2 md:p-4">{team.e}</td>
-                <td className="p-2 md:p-4">{team.d}</td>
-                <td className="p-2 md:p-4">{team.sg}</td>
-                <td className="p-2 md:p-4">{team.p}</td>
-                <td className="p-2 md:p-4 flex justify-center space-x-1">
-                  {team.forma.map((f, i) => (
-                    <span
-                      key={i}
-                      className={`w-6 h-6 flex items-center justify-center rounded-full text-xs font-semibold ${
-                        f === "V"
-                          ? "bg-green-500 text-white"
-                          : f === "E"
-                          ? "bg-yellow-500 text-white"
-                          : "bg-red-500 text-white"
-                      }`}
-                    >
-                      {f}
-                    </span>
-                  ))}
-                </td>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse text-sm md:text-base">
+            <thead>
+              <tr className="bg-gray-100 text-left text-gray-600 font-semibold">
+                <th className="p-2 md:p-4">#</th>
+                <th className="p-2 md:p-4">Equipe</th>
+                <th className="p-2 md:p-4">J</th>
+                <th className="p-2 md:p-4">V</th>
+                <th className="p-2 md:p-4">E</th>
+                <th className="p-2 md:p-4">D</th>
+                <th className="p-2 md:p-4">SG</th>
+                <th className="p-2 md:p-4">P</th>
+                <th className="p-2 md:p-4 text-center">Forma</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {data.map((team) => (
+                <tr
+                  key={team.pos}
+                  className="border-b hover:bg-gray-50 transition"
+                >
+                  <td className="p-2 md:p-4">{team.pos}</td>
+                  <td className="p-2 md:p-4">{team.equipe}</td>
+                  <td className="p-2 md:p-4">{team.j}</td>
+                  <td className="p-2 md:p-4">{team.v}</td>
+                  <td className="p-2 md:p-4">{team.e}</td>
+                  <td className="p-2 md:p-4">{team.d}</td>
+                  <td className="p-2 md:p-4">{team.sg}</td>
+                  <td className="p-2 md:p-4">{team.p}</td>
+                  <td className="p-2 md:p-4 flex justify-center space-x-1">
+                    {team.forma.map((f, i) => (
+                      <span
+                        key={i}
+                        className={`w-6 h-6 flex items-center justify-center rounded-full text-xs font-semibold ${
+                          f === "V"
+                            ? "bg-green-500 text-white"
+                            : f === "E"
+                            ? "bg-yellow-500 text-white"
+                            : "bg-red-500 text-white"
+                        }`}
+                      >
+                        {f}
+                      </span>
+                    ))}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
 
       {activeTab === "ARTILHEIROS" && (
-        <table className="w-full border-collapse text-sm md:text-base">
-          <thead>
-            <tr className="bg-gray-100 text-left text-gray-600 font-semibold">
-              <th className="p-2 md:p-4">#</th>
-              <th className="p-2 md:p-4">Jogador</th>
-              <th className="p-2 md:p-4">Equipe</th>
-              <th className="p-2 md:p-4">Gols</th>
-            </tr>
-          </thead>
-          <tbody>
-            {artilheiros.map((player) => (
-              <tr
-                key={player.pos}
-                className="border-b hover:bg-gray-50 transition"
-              >
-                <td className="p-2 md:p-4">{player.pos}</td>
-                <td className="p-2 md:p-4">{player.jogador}</td>
-                <td className="p-2 md:p-4">{player.equipe}</td>
-                <td className="p-2 md:p-4">{player.gols}</td>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse text-sm md:text-base">
+            <thead>
+              <tr className="bg-gray-100 text-left text-gray-600 font-semibold">
+                <th className="p-2 md:p-4">#</th>
+                <th className="p-2 md:p-4">Jogador</th>
+                <th className="p-2 md:p-4">Equipe</th>
+                <th className="p-2 md:p-4">Gols</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {artilheiros.map((player) => (
+                <tr
+                  key={player.pos}
+                  className="border-b hover:bg-gray-50 transition"
+                >
+                  <td className="p-2 md:p-4">{player.pos}</td>
+                  <td className="p-2 md:p-4">{player.jogador}</td>
+                  <td className="p-2 md:p-4">{player.equipe}</td>
+                  <td className="p-2 md:p-4">{player.gols}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
 
       {activeTab !== "LIVE STANDINGS" && activeTab !== "ARTILHEIROS" && (

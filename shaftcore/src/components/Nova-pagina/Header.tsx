@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { FaSearch, FaUser, FaBell, FaCog, FaMoon } from "react-icons/fa";
+import { FaSearch, FaUser, FaCog, FaMoon } from "react-icons/fa";
+import LoginCard from "@/components/LoginCard"; // Importe o LoginCard
 
 const Header: React.FC = () => {
-  const [isProfileOpen, setIsProfileOpen] = useState(false); // Controle do modal de perfil
+  const [isLoginOpen, setIsLoginOpen] = useState(false); // Controle do Login Card
   const [isSettingsOpen, setIsSettingsOpen] = useState(false); // Controle do modal de ajustes
 
   return (
@@ -10,23 +11,23 @@ const Header: React.FC = () => {
       <div className="container mx-auto flex items-center justify-between px-4 lg:px-8">
         {/* Logotipo */}
         <div className="flex items-center space-x-3">
-          <img src="logo-shaftscore.png" alt="ShaftScore Logo" className="h-8 w-auto" />
+          <img src="/logo-shaftscore.png" alt="ShaftScore Logo" className="h-8 w-auto" />
         </div>
 
         {/* Menu de Navegação */}
         <nav className="hidden md:flex items-center space-x-8">
           <a
             href="/resultados"
-            className="flex itemSs-center space-x-2 hover:text-[#ff1744] transition duration-300"
+            className="flex items-center space-x-2 hover:text-[#ff1744] transition duration-300"
           >
-            <img src="placar.png" alt="Resultados" className="h-6 w-auto" />
+            <img src="/placar.png" alt="Resultados" className="h-6 w-auto" />
             <span className="font-semibold">RESULTADOS</span>
           </a>
           <a
             href="/noticias"
             className="flex items-center space-x-2 hover:text-[#ff1744] transition duration-300"
           >
-            <img src="IconNoticias.png" alt="Notícias" className="h-6 w-auto" />
+            <img src="/IconNoticias.png" alt="Notícias" className="h-6 w-auto" />
             <span className="font-semibold">NOTÍCIAS</span>
           </a>
         </nav>
@@ -38,10 +39,9 @@ const Header: React.FC = () => {
             <FaSearch size={18} />
           </button>
 
-
-          {/* Botão de Perfil */}
+          {/* Botão de Login */}
           <button
-            onClick={() => setIsProfileOpen(true)} // Abre o modal de perfil
+            onClick={() => setIsLoginOpen(true)} // Abre o Login Card
             className="flex items-center space-x-2 p-2 rounded-full hover:bg-[#193847] transition duration-300"
           >
             <FaUser size={18} />
@@ -62,88 +62,10 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Modal de Perfil */}
-      {isProfileOpen && (
+      {/* Login Card */}
+      {isLoginOpen && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 z-50 flex items-center justify-center">
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-lg md:max-w-2xl p-6 relative">
-            {/* Botão para Fechar */}
-            <button
-              onClick={() => setIsProfileOpen(false)} // Fecha o modal de perfil
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
-            >
-              ✕
-            </button>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* QR Code Section */}
-              <div className="flex flex-col items-center bg-gray-900 text-white p-4 rounded-md">
-                <h2 className="text-lg font-bold text-center mb-4">
-                  Baixe o Flashscore para iOS ou Android
-                </h2>
-                <div className="flex flex-col items-center">
-                  <img
-                    src="/path-to/qr-code.png"
-                    alt="QR Code"
-                    className="w-32 h-32 mb-4"
-                  />
-                  <p>Escanear para baixar</p>
-                </div>
-              </div>
-
-              {/* Login Options */}
-              <div>
-                <h2 className="text-lg font-bold mb-4 text-center">
-                  Destrave a Experiência Completa
-                </h2>
-                <p className="text-sm text-gray-600 text-center mb-4">
-                  Rápido, Grátis e Cheio de Recompensas. Cadastre-se em segundos!
-                </p>
-                <div className="grid grid-cols-1 gap-4">
-                  <button className="flex items-center justify-center w-full py-2 border rounded-md text-gray-700 hover:bg-gray-100">
-                    <img
-                      src="/path-to/google-icon.png"
-                      alt="Google"
-                      className="w-6 h-6 mr-2"
-                    />
-                    Continuar com Google
-                  </button>
-                  <button className="flex items-center justify-center w-full py-2 border rounded-md text-gray-700 hover:bg-gray-100">
-                    <img
-                      src="/path-to/apple-icon.png"
-                      alt="Apple"
-                      className="w-6 h-6 mr-2"
-                    />
-                    Continuar com Apple
-                  </button>
-                  <button className="flex items-center justify-center w-full py-2 border rounded-md text-gray-700 hover:bg-gray-100">
-                    <img
-                      src="/path-to/facebook-icon.png"
-                      alt="Facebook"
-                      className="w-6 h-6 mr-2"
-                    />
-                    Continuar com Facebook
-                  </button>
-                  <button className="flex items-center justify-center w-full py-2 border rounded-md text-gray-700 hover:bg-gray-100">
-                    <img
-                      src="/path-to/email-icon.png"
-                      alt="Email"
-                      className="w-6 h-6 mr-2"
-                    />
-                    Continuar com email
-                  </button>
-                </div>
-                <p className="text-xs text-gray-500 text-center mt-4">
-                  Ao clicar em qualquer botão "continuar com", você concorda com os{" "}
-                  <a href="#" className="text-blue-500 hover:underline">
-                    termos de uso
-                  </a>{" "}
-                  e a nossa{" "}
-                  <a href="#" className="text-blue-500 hover:underline">
-                    política de privacidade
-                  </a>.
-                </p>
-              </div>
-            </div>
-          </div>
+          <LoginCard onClose={() => setIsLoginOpen(false)} /> {/* Usa o LoginCard */}
         </div>
       )}
 

@@ -9,8 +9,8 @@ export default function TopPlayers() {
       name: "Renato Steffen",
       team: "Lugano vs. Yverdon-Sport",
       score: 9.9,
-      imgSrc: "/player1.png", // Substitua pelo caminho correto da imagem do jogador
-      heatmapSrc: "/heatmap1.png", // Substitua pelo caminho correto da imagem do mapa de calor
+      imgSrc: "/player1.png", // caminho imagem do jogador
+      heatmapSrc: "/heatmap1.png", // Substitua caminho correto da imagem do mapa de calor
     },
     {
       id: 2,
