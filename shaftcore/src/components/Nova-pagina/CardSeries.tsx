@@ -21,22 +21,22 @@ const CardSerieB: React.FC = () => {
         return (
           <div className="bg-white rounded-lg shadow p-4 flex items-start space-x-4">
             <img
-              src="/images/logoBr.png" // Caminho ajustado
+              src="/.png" // Caminho ajustado
               alt="Notícia"
               className="h-24 w-32 md:h-32 md:w-48 rounded object-cover"
             />
             <div>
               <h2 className="text-lg font-semibold">
-                Rodada final da Série B é destaque das transmissões do Flashscore
+                Rodada final da Série B é destaque das transmissões do ShaftScore
                 no final de semana
               </h2>
               <div className="text-gray-500 text-sm flex items-center space-x-2 mt-2">
                 <img
-                  src="/images/logoBr.png" // Caminho ajustado
-                  alt="Flashscore"
+                  src="/Br.png" // Caminho ajustado
+                  alt="ShaftScore"
                   className="h-4 w-4"
                 />
-                <span>Flashscore Notícias</span>
+                <span>ShaftScore Notícias</span>
                 <span>•</span>
                 <span>Há 8 h</span>
               </div>
@@ -55,7 +55,7 @@ const CardSerieB: React.FC = () => {
             <h2 className="text-lg font-semibold mb-4">Próximos Jogos</h2>
             <div className="flex items-center space-x-4 mb-4">
               <img
-                src="/images/logoBr.png" // Caminho ajustado
+                src="/Br.png" // Caminho ajustado
                 alt="Time 1"
                 className="h-12 w-12 rounded-full object-cover"
               />
@@ -91,7 +91,7 @@ const CardSerieB: React.FC = () => {
       {/* Detalhes do Campeonato */}
       <div className="flex flex-col md:flex-row items-center md:items-start mb-6 space-y-4 md:space-y-0 md:space-x-4">
         <img
-          src="/images/logoBr.png" // Caminho ajustado
+          src="Br.png" // Caminho ajustado
           alt="Série B"
           className="h-16 w-16 md:h-20 md:w-20"
         />
