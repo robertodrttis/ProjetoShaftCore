@@ -123,7 +123,7 @@ const CardClassificacao: React.FC = () => {
             ))}
           </tbody>
         </table>
-      )}
+4      )}
 
       {activeTab !== "LIVE STANDINGS" && activeTab !== "ARTILHEIROS" && (
         <div className="text-center text-gray-500 py-6">
