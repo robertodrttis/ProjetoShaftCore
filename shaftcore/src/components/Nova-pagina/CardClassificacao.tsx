@@ -111,6 +111,10 @@ const CardClassificacao: React.FC = () => {
                 <th className="p-2 md:p-4">Equipe</th>
                 <th className="p-2 md:p-4">Gols</th>
               </tr>
+            ))}
+          </tbody>
+        </table>
+   )}
             </thead>
             <tbody>
               {artilheiros.map((player) => (
@@ -128,7 +132,6 @@ const CardClassificacao: React.FC = () => {
           </table>
         </div>
       )}
-
       {activeTab !== "LIVE STANDINGS" && activeTab !== "ARTILHEIROS" && (
         <div className="text-center text-gray-500 py-6">
           <p>Conteúdo da aba "{activeTab}" em desenvolvimento.</p>
