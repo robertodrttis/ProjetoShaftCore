@@ -46,7 +46,7 @@ const NovaPagina: React.FC = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Cards do lado esquerdo */}
-          <div className="space-y-4 lg:col-span-1">
+          <div className="space-y-4 lg:col-span-1 flex flex-col items-center lg:items-start">
             <CardCampeonatos />
             <CardLigasFixadas />
             <CardMinhasEquipes />
