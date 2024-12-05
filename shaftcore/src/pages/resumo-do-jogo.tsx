@@ -1,6 +1,6 @@
 import React from "react";
-import HeaderCard from "@/components/resumo-do-jogo/header";
-import NavigationCard from "@/components/resumo-do-jogo/nav";
+import HeaderCard from "../components/resumo-do-jogo/Header";
+import NavigationCard from "../components/resumo-do-jogo/Nav";
 import PartidaJogo from "@/components/resumo-do-jogo/PartidaJogo";
 import MenuCard from "@/components/resumo-do-jogo/MenuCard";
 

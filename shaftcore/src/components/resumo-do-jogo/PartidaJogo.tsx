@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 
+interface Team {
+  name: string;
+  logo: string;
+}
+
 interface PartidaJogoProps {
-  homeTeam: {
-    name: string;
-  };
-  awayTeam: {
-    name: string;
-  };
+  homeTeam: Team;
+  awayTeam: Team;
+  date: string;
+  time: string;
   score: string;
   status: string;
 }
@@ -43,33 +46,21 @@ const PartidaJogo: React.FC<PartidaJogoProps> = ({
     <div className="bg-white p-6 rounded-xl shadow-md flex items-center justify-between max-w-4xl mx-auto">
       {/* Time da casa */}
       <div className="flex flex-col items-center space-y-2">
-        <img
-          src="/br.png" // Caminho para o logo na pasta public
-          alt={homeTeam.name}
-          className="h-16 w-16 rounded-lg"
-        />
-        <span className="text-sm font-semibold text-gray-700">
-          {homeTeam.name}
-        </span>
+        <img src={homeTeam.logo} alt={`${homeTeam.name} logo`} className="h-16 w-16" />
+        <span className="font-bold">{homeTeam.name}</span>
       </div>
 
-      {/* Informações do Jogo */}
-      <div className="flex flex-col items-center text-center">
-        <span className="text-sm text-gray-500">{currentDateTime}</span>
-        <span className="text-3xl font-bold text-black">{score}</span>
-        <span className="text-sm text-gray-500 uppercase">{status}</span>
+      {/* Informações do jogo */}
+      <div className="text-center">
+        <div className="text-lg font-semibold">{score}</div>
+        <div className="text-gray-500">{status}</div>
+        <div className="text-sm text-gray-400 mt-1">{currentDateTime}</div>
       </div>
 
       {/* Time visitante */}
       <div className="flex flex-col items-center space-y-2">
-        <img
-          src="/br.png" // Caminho para o logo na pasta public
-          alt={awayTeam.name}
-          className="h-16 w-16 rounded-lg"
-        />
-        <span className="text-sm font-semibold text-gray-700">
-          {awayTeam.name}
-        </span>
+        <img src={awayTeam.logo} alt={`${awayTeam.name} logo`} className="h-16 w-16" />
+        <span className="font-bold">{awayTeam.name}</span>
       </div>
     </div>
   );
