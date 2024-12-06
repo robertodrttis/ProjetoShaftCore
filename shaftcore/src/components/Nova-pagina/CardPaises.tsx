@@ -23,11 +23,10 @@ const CardPaises: React.FC = () => {
     { id: 10, nome: "Armênia", link: "/armenia", bandeira: "br.png" },
     { id: 11, nome: "Aruba", link: "/aruba", bandeira: "br.png" },
     { id: 12, nome: "Austrália", link: "/australia", bandeira: "br.png" },
-
   ];
 
   return (
-    <div className="bg-gray-100 p-3 rounded-lg shadow-md w-64">
+    <div className="bg-gray-100 p-3 rounded-lg shadow-md w-full sm:w-64">
       {/* Título do Card */}
       <div className="flex items-center mb-3">
         <h3 className="text-base font-bold">PAÍSES</h3>

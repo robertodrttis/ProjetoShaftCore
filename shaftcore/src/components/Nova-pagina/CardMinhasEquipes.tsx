@@ -3,7 +3,7 @@ import { FaStar, FaPlus } from "react-icons/fa";
 
 const CardMinhasEquipes: React.FC = () => {
   return (
-    <div className="bg-gray-100 p-3 rounded-lg shadow-md w-64">
+    <div className="bg-gray-100 p-3 rounded-lg shadow-md w-full sm:w-64">
       {/* Título do Card */}
       <div className="flex items-center mb-3">
         <FaStar className="text-black mr-2" />

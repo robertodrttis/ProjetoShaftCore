@@ -44,9 +44,9 @@ const NovaPagina: React.FC = () => {
         <Header />
         <NavBar />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 grid grid-cols-1 lg:grid-cols-4 gap-y-6 gap-x-16">
           {/* Cards do lado esquerdo */}
-          <div className="space-y-4 lg:col-span-1 flex flex-col items-center lg:items-start">
+          <div className="space-y-4 lg:col-span-1 flex flex-col items-center lg:items-start gap-4">
             <CardCampeonatos />
             <CardLigasFixadas />
             <CardMinhasEquipes />
@@ -54,42 +54,80 @@ const NovaPagina: React.FC = () => {
           </div>
 
           {/* Cards centrais */}
-          <div className="lg:col-span-3 space-y-6">
-            <TeamCard
-              logo="SantosLogo.png"
-              teamName="Santos Futebol Clube"
-              stadium="Vila Belmiro"
-              city="Santos"
-              capacity={16068}
-              tabs={[
-                "RESUMO",
-                "NOTÍCIAS",
-                "RESULTADOS",
-                "CALENDÁRIO",
-                "CLASSIFICAÇÃO",
-                "TRANSFERÊNCIAS",
-                "ELENCO",
-              ]}
-              onTabClick={(tab) => setActiveTab(tab)}
-            />
+          <div className="lg:col-span-3 space-y-6 lg:ml-8">
+            <div className="bg-white shadow-md rounded-lg p-4">
+              <TeamCard
+                logo="SantosLogo.png"
+                teamName="Santos Futebol Clube"
+                stadium="Vila Belmiro"
+                city="Santos"
+                capacity={16068}
+                tabs={[
+                  "RESUMO",
+                  "NOTÍCIAS",
+                  "RESULTADOS",
+                  "CALENDÁRIO",
+                  "CLASSIFICAÇÃO",
+                  "TRANSFERÊNCIAS",
+                  "ELENCO",
+                ]}
+                onTabClick={(tab) => setActiveTab(tab)}
+              />
+            </div>
 
             {/* Renderizar conteúdo com base na aba ativa */}
             {activeTab === "RESUMO" && (
               <div className="space-y-6">
+                <div className="bg-white shadow-md rounded-lg p-4">
+                  <NewsCard news={news} />
+                </div>
+                <div className="bg-white shadow-md rounded-lg p-4">
+                  <CardUltimosResultados />
+                </div>
+                <div className="bg-white shadow-md rounded-lg p-4">
+                  <CalendarioJogos games={[]} />
+                </div>
+                <div className="bg-white shadow-md rounded-lg p-4">
+                  <CardClassificacao />
+                </div>
+                <div className="bg-white shadow-md rounded-lg p-4">
+                  <CardTransferencias />
+                </div>
+                <div className="bg-white shadow-md rounded-lg p-4">
+                  <CardElenco />
+                </div>
+              </div>
+            )}
+            {activeTab === "NOTÍCIAS" && (
+              <div className="bg-white shadow-md rounded-lg p-4">
                 <NewsCard news={news} />
+              </div>
+            )}
+            {activeTab === "RESULTADOS" && (
+              <div className="bg-white shadow-md rounded-lg p-4">
                 <CardUltimosResultados />
+              </div>
+            )}
+            {activeTab === "CALENDÁRIO" && (
+              <div className="bg-white shadow-md rounded-lg p-4">
                 <CalendarioJogos games={[]} />
+              </div>
+            )}
+            {activeTab === "CLASSIFICAÇÃO" && (
+              <div className="bg-white shadow-md rounded-lg p-4">
                 <CardClassificacao />
+              </div>
+            )}
+            {activeTab === "TRANSFERÊNCIAS" && (
+              <div className="bg-white shadow-md rounded-lg p-4">
                 <CardTransferencias />
+              </div>
+            )}
+            {activeTab === "ELENCO" && (
+              <div className="bg-white shadow-md rounded-lg p-4">
                 <CardElenco />
               </div>
             )}
-            {activeTab === "NOTÍCIAS" && <NewsCard news={news} />}
-            {activeTab === "RESULTADOS" && <CardUltimosResultados />}
-            {activeTab === "CALENDÁRIO" && <CalendarioJogos games={[]} />}
-            {activeTab === "CLASSIFICAÇÃO" && <CardClassificacao />}
-            {activeTab === "TRANSFERÊNCIAS" && <CardTransferencias />}
-            {activeTab === "ELENCO" && <CardElenco />}
           </div>
         </div>
       </div>

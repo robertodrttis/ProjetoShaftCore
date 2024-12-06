@@ -23,7 +23,6 @@ const PartidaJogo: React.FC<PartidaJogoProps> = ({
   const [currentDateTime, setCurrentDateTime] = useState("");
 
   useEffect(() => {
-    // Atualiza a data e hora dinâmicas
     const interval = setInterval(() => {
       const now = new Date();
       const formattedDate = now.toLocaleDateString("pt-BR", {
@@ -46,7 +45,7 @@ const PartidaJogo: React.FC<PartidaJogoProps> = ({
     <div className="bg-white p-6 rounded-xl shadow-md flex items-center justify-between max-w-4xl mx-auto">
       {/* Time da casa */}
       <div className="flex flex-col items-center space-y-2">
-        <img src={homeTeam.logo} alt={`${homeTeam.name} logo`} className="h-16 w-16" />
+        <img src="br.png" alt={`${homeTeam.name} logo`} className="h-16 w-16" />
         <span className="font-bold">{homeTeam.name}</span>
       </div>
 
@@ -59,7 +58,7 @@ const PartidaJogo: React.FC<PartidaJogoProps> = ({
 
       {/* Time visitante */}
       <div className="flex flex-col items-center space-y-2">
-        <img src={awayTeam.logo} alt={`${awayTeam.name} logo`} className="h-16 w-16" />
+        <img src="br.png" alt={`${awayTeam.name} logo`} className="h-16 w-16" />
         <span className="font-bold">{awayTeam.name}</span>
       </div>
     </div>
