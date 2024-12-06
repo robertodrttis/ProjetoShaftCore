@@ -23,7 +23,7 @@ const CardCampeonatos: React.FC = () => {
   ];
 
   return (
-    <div className="bg-gray-100 p-3 rounded-lg shadow-md w-72">
+    <div className="bg-gray-100 p-3 rounded-lg shadow-md w-full sm:w-80">
       {/* Título do Card */}
       <div className="flex items-center mb-3">
         <img src="br.png" alt="Bandeira do Brasil" className="h-5 w-5 mr-2" />

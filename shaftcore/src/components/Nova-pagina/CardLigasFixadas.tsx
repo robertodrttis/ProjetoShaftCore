@@ -26,7 +26,7 @@ const CardLigasFixadas: React.FC = () => {
   ];
 
   return (
-    <div className="bg-gray-100 p-3 rounded-lg shadow-md w-72">
+    <div className="bg-gray-100 p-3 rounded-lg shadow-md w-full sm:w-80">
       {/* Título do Card */}
       <div className="flex items-center mb-3">
         <span className="mr-2 text-lg font-bold">📌</span>

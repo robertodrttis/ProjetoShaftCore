@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 // Função auxiliar para obter os dias do mês
 const getDaysInMonth = (month: number, year: number) => {
@@ -61,30 +62,30 @@ const Calendary: React.FC = () => {
   ];
 
   return (
-    <div className="p-4 bg-white rounded-lg shadow-lg w-full">
-      <h2 className="text-md md:text-lg font-bold mb-4 text-center">
+    <div className="p-4 bg-white rounded-lg shadow-lg w-full max-w-md mx-auto">
+      <h2 className="text-lg font-bold mb-4 text-center text-gray-800">
         Resultados ao vivo de futebol e programação de hoje
       </h2>
       <div className="flex items-center justify-between mb-4">
         <button
           onClick={handlePreviousMonth}
-          className="text-gray-600 hover:text-gray-800 text-xl md:text-2xl"
+          className="text-[#003f8a] hover:text-[#001f4d] text-2xl"
         >
-          {"<"}
+          <FaChevronLeft />
         </button>
-        <span className="font-semibold text-sm md:text-lg">
+        <span className="font-semibold text-lg text-gray-800">
           {monthNames[month]} {year}
         </span>
         <button
           onClick={handleNextMonth}
-          className="text-gray-600 hover:text-gray-800 text-xl md:text-2xl"
+          className="text-[#003f8a] hover:text-[#001f4d] text-2xl"
         >
-          {">"}
+          <FaChevronRight />
         </button>
       </div>
-      <div className="grid grid-cols-7 gap-2 md:gap-4 text-center text-xs md:text-sm lg:text-base">
+      <div className="grid grid-cols-7 gap-2 text-center text-sm font-medium">
         {["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"].map((day) => (
-          <div key={day} className="font-semibold text-gray-600">
+          <div key={day} className="text-gray-600">
             {day}
           </div>
         ))}
@@ -96,12 +97,12 @@ const Calendary: React.FC = () => {
         {[...Array(daysInMonth)].map((_, index) => (
           <div
             key={index}
-            className={`p-2 md:p-2 rounded-full hover:bg-blue-100 cursor-pointer transition-colors ${
+            className={`p-2 rounded-lg cursor-pointer transition-colors ${
               index + 1 === today.getDate() &&
               month === today.getMonth() &&
               year === today.getFullYear()
-                ? "bg-blue-500 text-white"
-                : "text-gray-800"
+                ? "bg-[#003f8a] text-white font-bold shadow-md"
+                : "bg-gray-100 text-gray-800 hover:bg-[#001f4d] hover:text-white"
             }`}
           >
             {index + 1}
@@ -113,7 +114,7 @@ const Calendary: React.FC = () => {
           setMonth(today.getMonth());
           setYear(today.getFullYear());
         }}
-        className="mt-4 p-2 md:p-3 w-full bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+        className="mt-4 p-3 w-full bg-[#003f8a] text-white rounded-lg hover:bg-[#001f4d] transition-colors font-semibold"
       >
         Hoje
       </button>
